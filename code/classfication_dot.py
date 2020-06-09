@@ -56,7 +56,6 @@ class Net(nn.Module):
         lc4 = nn.functional.relu(torch.matmul(lc3,self.w4)+self.b4)
         lc5 = torch.sigmoid(torch.matmul(lc4,self.w5)+self.b5)
         return lc5
-
 if __name__ == '__main__':
     net = Net()
     optim = torch.optim.Adam(net.parameters(),lr=0.01)
@@ -78,8 +77,8 @@ if __name__ == '__main__':
             xt1 = showdot[:,:2]
             # # print(xt1.shape)
             xt2 = net(xt1.float())#.detach().numpy()
-            zerodot = xt1[xt2.reshape(xt2.numel())>torch.tensor(0.5)]
-            onedot  = xt1[xt2.reshape(xt2.numel())<=torch.tensor(0.5)]
+            zerodot = xt1[xt2.reshape(xt2.numel())>0.5]
+            onedot  = xt1[xt2.reshape(xt2.numel())<=0.5]
             # print(zerodot.shape)
             # print(zerodot.shape)
             # print(onedot.shape)

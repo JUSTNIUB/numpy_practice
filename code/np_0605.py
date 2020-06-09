@@ -2,7 +2,7 @@ import torch
 from torch import nn
 import matplotlib.pyplot as plt
 
-x = torch.unsqueeze(torch.arange(-10,10),dim=1)
+x = torch.unsqueeze(torch.arange(-10,10),dim=1).reshape(20,1)
 y = x.pow(3)
 
 # plt.scatter(x,y)

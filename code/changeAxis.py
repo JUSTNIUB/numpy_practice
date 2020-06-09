@@ -11,7 +11,8 @@ mdfData = orgData.transpose(2,1,0)
 print('0 2轴交换数据\n',mdfData)
 mdfData = orgData.transpose(1,0,2)
 print('1,0,2 交换数据',mdfData)
-
+mdfData = orgData.swapaxes(1,2)
+print('交换12轴数据',mdfData)
 #自定义python 多维转换 a[i][j][k] = b[j][k][i] 取出不同元素
 # sizeArray = orgData.shape
 # rankargs  = [2,1,0]
